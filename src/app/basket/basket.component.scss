@@ -1,0 +1,59 @@
+@use "../../styles";
+
+.film-info {
+  margin: auto;
+  position: relative;
+  padding: 5px;
+  font-family: "SF Pro Text", sans-serif;
+  color: #333;
+}
+
+.image {
+  height: 320px;
+}
+
+.images {
+  @include styles.flex-center;
+}
+
+.film-price {
+  font-size: large;
+  font-weight: 500;
+  color: #333;
+}
+
+.film-container {
+  @include styles.flex-center;
+  width: 15rem;
+  margin: 3px;
+  border-radius: 10px;
+  padding: 20px;
+  //box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 20px 0px;
+  border: 1px solid #e0e0e0
+}
+
+.total-cart {
+  width: 100%;
+}
+
+.film-item {
+  margin-left: auto;
+}
+
+.film-name{
+  min-height: 100px;
+  font-size: 18px;
+  top: 50%;
+}
+
+.cart-container {
+  margin: auto;
+}
+
+.cart-info{
+  padding: 10px;
+  font-size: 30px;
+  margin-bottom: 100px;
+}
+
+

@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  isStore: boolean = true;
+
+  store() {
+    this.isStore = !this.isStore;
+  }
+
   title = 'filmstore';
 }
