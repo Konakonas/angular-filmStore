@@ -6,39 +6,46 @@
   padding: 5px;
   font-family: "SF Pro Text", sans-serif;
   color: #333;
+  height: 45%;
 }
 
 .image {
   height: 320px;
+  width: 220px;
 }
 
 .images {
   @include styles.flex-center;
+  height: 45%;
 }
 
 .film-price {
   font-size: large;
   font-weight: 500;
+  font-style: italic;
   color: #333;
+  display: block;
+  margin-bottom: 0px;
 }
 
 .film-container {
   @include styles.flex-center;
-  width: 15rem;
+  width: 22rem;
   margin: 3px;
   border-radius: 10px;
   padding: 20px;
   border: 1px solid #e0e0e0;
+  height: 45rem;
+  display: block;
 }
 
 .film-item {
-  margin-left: auto;
+  margin: auto;
 }
 
 .film-name{
+  @include styles.flex-center;
   min-height: 100px;
-  font-size: 18px;
-  top: 50%;
+  font-size: 25px;
+  font-weight: bold;
 }
-
-

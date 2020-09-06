@@ -1,3 +1,7 @@
+<div class="row justify-content-between cart-info">
+  <span class="total-cart cost col-4">Итоговая сумма: {{sum$ | async}}</span>
+  <button class="btn btn-primary col-1" (click)="clearCart()">Очистить корзину</button>
+</div>
 <div class="row cart-container">
   <div class="film-item" *ngFor="let film of cartSetvice.cart$ | async">
     <div class="film-container row">
@@ -5,16 +9,15 @@
         <img class="image" [src]="film.image" alt="">
       </div>
       <div class="film-info">
-        <div class="film-name align-middle">{{film.name}}</div>
-        <div class="film-description">{{film.description}}</div>
-        <div class="film-price">{{film.price}} ₽ </div>
+        <div class="film-about">
+          <div class="film-name align-middle">{{film.name}}</div>
+          <div class="film-description">{{film.description}}</div>
+        </div>
       </div>
-      <button class="btn btn-primary" (click)="deletePosition(film.Id)">Delete</button>
+      <div class="film-price ">{{film.price}} ₽</div>
+      <button class="btn btn-primary" (click)="deletePosition(film.Id)">Удалить</button>
     </div>
   </div>
 </div>
-<div class="row justify-content-between cart-info">
-  <span class="total-cart cost col-4">Итоговая сумма: {{sum$ | async}}</span>
-  <button class="btn btn-primary col-1" (click)="clearCart()">Clear cart</button>
-</div>
+
 

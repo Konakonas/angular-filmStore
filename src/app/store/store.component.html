@@ -5,10 +5,12 @@
         <img class="image" [src]="film.image" alt="">
       </div>
       <div class="film-info">
-        <div class="film-name align-middle">{{film.name}}</div>
-        <div class="film-description">{{film.description}}</div>
-        <div class="film-price">{{film.price}} ₽ </div>
+        <div class="film-about">
+          <div class="film-name align-middle">{{film.name}}</div>
+          <div class="film-description">{{film.description}}</div>
+        </div>
       </div>
+      <div class="film-price ">{{film.price}} ₽</div>
       <button class="btn btn-primary" (click)="filmToBasket(film)">{{cartSetvice.isSelected(film)}}</button>
     </div>
   </div>
