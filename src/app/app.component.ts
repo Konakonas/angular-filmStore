@@ -7,11 +7,4 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
-  isStore: boolean = true;
-
-  store() {
-    this.isStore = !this.isStore;
-  }
-
-  title = 'filmstore';
 }

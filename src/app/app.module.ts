@@ -1,13 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
+import {RouterModule, Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { StoreComponent } from './store/store.component';
 import { BasketComponent } from './basket/basket.component';
-import {HttpClientModule} from '@angular/common/http';
-import {RouterModule, Routes} from '@angular/router';
 import {CartService} from './shared/basket.service';
-import {FilmStore} from './shared/store.service';
+import {FilmService} from './shared/store.service';
+import { NewFilmComponent } from './new-film/new-film.component';
+import { FilmInfoComponent } from './film-info/film-info.component';
 
 const routes: Routes = [
   {
@@ -22,7 +24,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     StoreComponent,
-    BasketComponent
+    BasketComponent,
+    NewFilmComponent,
+    FilmInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,7 @@ const routes: Routes = [
       initialNavigation: 'enabled'
     })
   ],
-  providers: [CartService, FilmStore],
+  providers: [CartService, FilmService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
