@@ -1,15 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
-import {RouterModule, Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { StoreComponent } from './store/store.component';
 import { BasketComponent } from './basket/basket.component';
+import {HttpClientModule} from '@angular/common/http';
+import {RouterModule, Routes} from '@angular/router';
 import {CartService} from './shared/basket.service';
-import {FilmService} from './shared/store.service';
-import { NewFilmComponent } from './new-film/new-film.component';
-import { FilmInfoComponent } from './film-info/film-info.component';
+import {FilmStore} from './shared/store.service';
+import { MovieInfoComponent } from './movie-info/movie-info.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import { NewMovieComponent } from './new-movie/new-movie.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import { SearchMovieComponent } from './search-movie/search-movie.component';
 
 const routes: Routes = [
   {
@@ -17,6 +23,12 @@ const routes: Routes = [
   },
   {
     path: 'cart', component: BasketComponent
+  },
+  {
+    path: 'movie/:id', component: MovieInfoComponent
+  },
+  {
+    path: 'addMovie', component: NewMovieComponent
   }
 ];
 
@@ -25,17 +37,23 @@ const routes: Routes = [
     AppComponent,
     StoreComponent,
     BasketComponent,
-    NewFilmComponent,
-    FilmInfoComponent
+    MovieInfoComponent,
+    NewMovieComponent,
+    SearchMovieComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes, {
       initialNavigation: 'enabled'
-    })
+    }),
+    BrowserAnimationsModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
-  providers: [CartService, FilmService],
+  providers: [CartService, FilmStore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

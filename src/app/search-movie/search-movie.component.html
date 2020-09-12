@@ -1,0 +1,14 @@
+<div class="input-group">
+  <div class="custom-wrapper-example input-group-prepend" matAutocompleteOrigin #origin="matAutocompleteOrigin">
+    <input
+      class="form-control"
+      [formControl]="searchControl"
+      matInput
+      [matAutocomplete]="auto"
+      [matAutocompleteConnectedTo]="origin">
+  </div>
+
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of search | async" [value]="option.Id" [routerLink]="'movie/'+ option.Id">{{option.name}}</mat-option>
+  </mat-autocomplete>
+</div>

@@ -1,0 +1,37 @@
+<form [formGroup]="newFilm" (ngSubmit)="addNewFilm()">
+  <div class="form-container">
+    <div>
+      <mat-form-field>
+        <input matInput
+               formControlName="name"
+               placeholder="Введите название фильма"/>
+        <mat-error>Название</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+               formControlName="description"
+               placeholder="Введите описание фильма"/>
+        <mat-error>Описание</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+               formControlName="price"
+               placeholder="Введите цену фильма"
+                type="number"/>
+        <mat-error>Цена</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+               formControlName="image"
+               placeholder="Введите ссылку на картинку"/>
+        <mat-error>Ссылка на постер</mat-error>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button
+            type="submit"
+            [disabled]="newFilm.invalid"
+            color="primary">
+      Create
+    </button>
+  </div>
+</form>

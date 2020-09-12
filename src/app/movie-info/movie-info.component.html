@@ -1,0 +1,26 @@
+<div class="row no-gutters justify-content-md-center">
+  <div class="col-4 justify-content-md-center images img-fluid">
+    <p *ngIf="currentFilm$ | async; let film">
+      <img [src]="film.image" alt="">
+    </p>
+  </div>
+  <div class="col-4 justify-content-md-center">
+    <div class="film-info">
+      <div class="film-name align-middle">
+        <p *ngIf="currentFilm$ | async; let film">
+          {{(currentFilm$ | async).name}}
+        </p>
+      </div>
+      <div class="film-description">
+        <p *ngIf="currentFilm$ | async; let film">
+          {{(currentFilm$ | async).description}}
+        </p>
+      </div>
+      <div class="film-price">
+      <p *ngIf="currentFilm$ | async; let film">
+        {{film.price}}
+      </p>
+      </div>
+    </div>
+  </div>
+</div>

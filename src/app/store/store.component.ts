@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FilmService} from '../shared/store.service';
+import {FilmStore} from '../shared/store.service';
 import {Film} from '../shared/interfaces';
 import {CartService} from '../shared/basket.service';
 
@@ -12,12 +12,12 @@ export class StoreComponent implements OnInit {
 
   films: Film[] = [];
 
-  constructor(public filmStore: FilmService,
+  constructor(public filmStore: FilmStore,
               private cartSetvice: CartService) {
   }
 
   ngOnInit() {
-    this.filmStore.load();
+
   }
 
   filmToBasket(film: Film) {
